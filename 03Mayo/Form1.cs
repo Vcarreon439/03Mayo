@@ -38,5 +38,11 @@ namespace _03Mayo
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            Form obj = new Mostrar();
+            obj.ShowDialog();
+        }
     }
 }

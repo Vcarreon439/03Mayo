@@ -34,6 +34,7 @@ namespace _03Mayo
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnMostrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtDescripcion
@@ -79,11 +80,22 @@ namespace _03Mayo
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // btnMostrar
+            // 
+            this.btnMostrar.Location = new System.Drawing.Point(216, 248);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
+            this.btnMostrar.TabIndex = 5;
+            this.btnMostrar.Text = "Mostrar";
+            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -103,6 +115,7 @@ namespace _03Mayo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnMostrar;
     }
 }
 
