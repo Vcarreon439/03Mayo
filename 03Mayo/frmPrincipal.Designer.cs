@@ -1,7 +1,7 @@
 ﻿
 namespace _03Mayo
 {
-    partial class Form1
+    partial class frmPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -35,6 +35,8 @@ namespace _03Mayo
             this.label2 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
+            this.btnConsultas = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtDescripcion
@@ -72,7 +74,7 @@ namespace _03Mayo
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(230, 326);
+            this.btnAgregar.Location = new System.Drawing.Point(283, 175);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 4;
@@ -82,7 +84,7 @@ namespace _03Mayo
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(216, 248);
+            this.btnMostrar.Location = new System.Drawing.Point(15, 88);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(75, 23);
             this.btnMostrar.TabIndex = 5;
@@ -90,19 +92,43 @@ namespace _03Mayo
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
-            // Form1
+            // btnConsultas
+            // 
+            this.btnConsultas.Location = new System.Drawing.Point(15, 117);
+            this.btnConsultas.Name = "btnConsultas";
+            this.btnConsultas.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultas.TabIndex = 6;
+            this.btnConsultas.Text = "Consultas";
+            this.btnConsultas.UseVisualStyleBackColor = true;
+            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(15, 146);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "Bajas";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(367, 215);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnConsultas);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtDescripcion);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "frmPrincipal";
+            this.Text = "Altas";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,6 +142,8 @@ namespace _03Mayo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Button btnConsultas;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 

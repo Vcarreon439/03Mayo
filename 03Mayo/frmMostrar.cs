@@ -4,17 +4,17 @@ using System.Windows.Forms;
 
 namespace _03Mayo
 {
-    public partial class Mostrar : Form
+    public partial class frmMostrar : Form
     {
         ConexionSQL interno;
 
-        public Mostrar(ConexionSQL obj)
+        public frmMostrar(ConexionSQL obj)
         {
             InitializeComponent();
             interno = obj;
         }
         
-        public Mostrar()
+        public frmMostrar()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace _03Mayo
             try
             {
                 interno.AbrirConexion();
-                string cadena = "select codigo, descripcion,precio from articulos";
+                string cadena = "select codigo, descripcion, precio from articulos";
                 SqlCommand comando = new SqlCommand(cadena, interno.Conexion);
                 SqlDataReader registros = comando.ExecuteReader();
 
@@ -35,7 +35,7 @@ namespace _03Mayo
                     txtMostrar.AppendText(registros["descripcion"].ToString());
                     txtMostrar.AppendText(" - ");
                     txtMostrar.AppendText(registros["precio"].ToString());
-                    txtMostrar.AppendText(" - ");
+                    txtMostrar.AppendText("\r\n");
                 }
 
                 interno.Conexion.Close();

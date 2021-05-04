@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace _03Mayo
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
         ConexionSQL obj = new ConexionSQL("server=DESKTOP-185RN13\\SQLEXPRESS; database=Datos1; integrated security = true");
 
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
             
@@ -45,7 +45,25 @@ namespace _03Mayo
             if (obj.Conexion.State!=ConnectionState.Closed)
                 obj.CerrarConexion();
 
-            Mostrar forma = new Mostrar(obj);
+            frmMostrar forma = new frmMostrar(obj);
+            forma.ShowDialog();
+        }
+
+        private void btnConsultas_Click(object sender, EventArgs e)
+        {
+            if (obj.Conexion.State != ConnectionState.Closed)
+                obj.CerrarConexion();
+
+            frmConsultas forma = new frmConsultas(obj);
+            forma.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (obj.Conexion.State != ConnectionState.Closed)
+                obj.CerrarConexion();
+
+            frmBajas forma = new frmBajas(obj);
             forma.ShowDialog();
         }
     }

@@ -1,7 +1,7 @@
 ﻿
 namespace _03Mayo
 {
-    partial class Mostrar
+    partial class frmMostrar
     {
         /// <summary>
         /// Required designer variable.
@@ -51,14 +51,14 @@ namespace _03Mayo
             this.txtMostrar.Size = new System.Drawing.Size(554, 221);
             this.txtMostrar.TabIndex = 1;
             // 
-            // Mostrar
+            // frmMostrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(576, 274);
             this.Controls.Add(this.txtMostrar);
             this.Controls.Add(this.btnMostrar);
-            this.Name = "Mostrar";
+            this.Name = "frmMostrar";
             this.Text = "Mostrar";
             this.ResumeLayout(false);
             this.PerformLayout();
