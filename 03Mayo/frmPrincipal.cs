@@ -14,15 +14,12 @@ namespace _03Mayo
 {
     public partial class frmPrincipal : Form
     {
-        FileStream fileStream = new FileStream("./Datos1.mdf", FileMode.Open);
         ConexionSQL obj;
 
         public frmPrincipal()
         {
             InitializeComponent();
-            obj = new ConexionSQL($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={fileStream.Name};Integrated Security = True");
-            fileStream.Dispose();
-            MessageBox.Show(fileStream.Name);
+            obj = new ConexionSQL($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={Path.GetFullPath("./Datos1.mdf")};Integrated Security = True");
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
