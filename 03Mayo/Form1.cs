@@ -13,23 +13,24 @@ namespace _03Mayo
 {
     public partial class Form1 : Form
     {
+        ConexionSQL obj = new ConexionSQL("server=DESKTOP-185RN13\\SQLEXPRESS; database=Datos1; integrated security = true");
+
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("server=DESKTOP-185RN13\\SQLEXPRESS; database=Datos1; integrated security = true");
-
             try
             {
-                conexion.Open();
+                obj.AbrirConexion();
                 string descripcion = txtDescripcion.Text;
                 string precio = txtPrecio.Text;
-                SqlCommand insercion = new SqlCommand($"insert into articulos(descripcion, precio) values('{descripcion}',{ precio})", conexion);
+                SqlCommand insercion = new SqlCommand($"insert into articulos(descripcion, precio) values('{descripcion}',{ precio})", obj.Conexion);
                 insercion.ExecuteNonQuery();
-                conexion.Close();
+                obj.CerrarConexion();
                 txtDescripcion.Text = "";
                 txtPrecio.Text = "";
             }
@@ -41,8 +42,11 @@ namespace _03Mayo
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            Form obj = new Mostrar();
-            obj.ShowDialog();
+            if (obj.Conexion.State!=ConnectionState.Closed)
+                obj.CerrarConexion();
+
+            Mostrar forma = new Mostrar(obj);
+            forma.ShowDialog();
         }
     }
 }

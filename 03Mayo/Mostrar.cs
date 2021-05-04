@@ -6,6 +6,14 @@ namespace _03Mayo
 {
     public partial class Mostrar : Form
     {
+        ConexionSQL interno;
+
+        public Mostrar(ConexionSQL obj)
+        {
+            InitializeComponent();
+            interno = obj;
+        }
+        
         public Mostrar()
         {
             InitializeComponent();
@@ -13,13 +21,11 @@ namespace _03Mayo
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            SqlConnection conexion = new SqlConnection("server=DESKTOP-185RN13\\SQLEXPRESS; database=Datos1; integrated security = true");
-
             try
             {
-                conexion.Open();
+                interno.AbrirConexion();
                 string cadena = "select codigo, descripcion,precio from articulos";
-                SqlCommand comando = new SqlCommand(cadena, conexion);
+                SqlCommand comando = new SqlCommand(cadena, interno.Conexion);
                 SqlDataReader registros = comando.ExecuteReader();
 
                 while (registros.Read())
@@ -32,7 +38,7 @@ namespace _03Mayo
                     txtMostrar.AppendText(" - ");
                 }
 
-                conexion.Close();
+                interno.Conexion.Close();
             }
             catch (Exception ex)
             {
