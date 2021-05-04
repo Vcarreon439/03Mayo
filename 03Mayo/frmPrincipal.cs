@@ -29,7 +29,7 @@ namespace _03Mayo
                 obj.AbrirConexion();
                 string descripcion = txtDescripcion.Text;
                 string precio = txtPrecio.Text;
-                SqlCommand insercion = new SqlCommand($"insert into articulos(descripcion, precio) values('{descripcion}',{ precio})", obj.Conexion);
+                SqlCommand insercion = new SqlCommand($"insert into articulos(descripcion, precio) values('{descripcion}',{precio})", obj.Conexion);
                 insercion.ExecuteNonQuery();
                 obj.CerrarConexion();
                 txtDescripcion.Text = "";
