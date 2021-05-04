@@ -39,7 +39,7 @@ namespace _03Mayo
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(140, 23);
             this.btnMostrar.TabIndex = 0;
-            this.btnMostrar.Text = "Mostrar DATOS";
+            this.btnMostrar.Text = "Mostrar Datos";
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
@@ -55,9 +55,12 @@ namespace _03Mayo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(576, 274);
             this.Controls.Add(this.txtMostrar);
             this.Controls.Add(this.btnMostrar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmMostrar";
             this.Text = "Mostrar";
             this.ResumeLayout(false);

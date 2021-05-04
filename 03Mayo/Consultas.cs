@@ -31,21 +31,24 @@ namespace _03Mayo
         {
             try
             {
+                rTxtBxDescripcion.Text = "";
+                lblPrecio2.Text = "";
+
                 interno.AbrirConexion();
                 string cod = txtCodigo.Text;
-                string comand = "select descripcion, precio from articulos where codigo="+cod;
+                string comand = "select descripcion, precio from articulos where codigo=" + cod;
                 SqlCommand command = new SqlCommand(comand, interno.Conexion);
                 SqlDataReader registro = command.ExecuteReader();
-                
-                
+
+
                 if (registro.Read())
                 {
-                    label1.Text = registro["descripcion"].ToString();
-                    label2.Text = registro["precio"].ToString();
+                    rTxtBxDescripcion.Text = registro["descripcion"].ToString();
+                    lblPrecio2.Text = "$" + registro["precio"].ToString();
                 }
                 else
                 {
-                    MessageBox.Show("");
+                    MessageBox.Show("Elemento no encontrado");
                 }
 
                 interno.CerrarConexion();
@@ -55,6 +58,7 @@ namespace _03Mayo
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                interno.CerrarConexion();
             }
         }
     }

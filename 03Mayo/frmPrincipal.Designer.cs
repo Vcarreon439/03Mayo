@@ -127,6 +127,7 @@ namespace _03Mayo
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtDescripcion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.Text = "Altas";
             this.ResumeLayout(false);
