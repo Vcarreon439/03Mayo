@@ -24,8 +24,5 @@ namespace _03Mayo
         {
             conexion.Close();
         }
-
-
-
     }
 }
