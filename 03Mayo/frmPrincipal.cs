@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,15 @@ namespace _03Mayo
 {
     public partial class frmPrincipal : Form
     {
-        ConexionSQL obj = new ConexionSQL("server=DESKTOP-185RN13\\SQLEXPRESS; database=Datos1; integrated security = true");
+        FileStream fileStream = new FileStream("./Datos1.mdf", FileMode.Open);
+        ConexionSQL obj;
 
         public frmPrincipal()
         {
             InitializeComponent();
-            
+            obj = new ConexionSQL($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={fileStream.Name};Integrated Security = True");
+            fileStream.Dispose();
+            MessageBox.Show(fileStream.Name);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
