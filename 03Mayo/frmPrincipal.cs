@@ -61,5 +61,14 @@ namespace _03Mayo
             frmBajas forma = new frmBajas(obj);
             forma.ShowDialog();
         }
+
+        private void btnCambios_Click(object sender, EventArgs e)
+        {
+            if (obj.Conexion.State != ConnectionState.Closed)
+                obj.CerrarConexion();
+
+            Actualizar forma = new Actualizar(obj);
+            forma.ShowDialog();
+        }
     }
 }

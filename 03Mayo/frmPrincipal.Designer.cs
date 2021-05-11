@@ -37,6 +37,7 @@ namespace _03Mayo
             this.btnMostrar = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnCambios = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtDescripcion
@@ -112,12 +113,23 @@ namespace _03Mayo
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnCambios
+            // 
+            this.btnCambios.Location = new System.Drawing.Point(15, 175);
+            this.btnCambios.Name = "btnCambios";
+            this.btnCambios.Size = new System.Drawing.Size(75, 23);
+            this.btnCambios.TabIndex = 8;
+            this.btnCambios.Text = "Cambios";
+            this.btnCambios.UseVisualStyleBackColor = true;
+            this.btnCambios.Click += new System.EventHandler(this.btnCambios_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(367, 215);
+            this.Controls.Add(this.btnCambios);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnConsultas);
             this.Controls.Add(this.btnMostrar);
@@ -145,6 +157,7 @@ namespace _03Mayo
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnCambios;
     }
 }
 

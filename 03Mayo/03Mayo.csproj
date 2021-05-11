@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actualizar.Designer.cs">
+      <DependentUpon>Actualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConexionSQL.cs" />
     <Compile Include="frmConsultas.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Actualizar.resx">
+      <DependentUpon>Actualizar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultas.resx">
       <DependentUpon>frmConsultas.cs</DependentUpon>
     </EmbeddedResource>
